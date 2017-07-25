@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Git Social Calendar</string>
-    <string name="friday_resource">Friday</string>
+    <string name="friday_resource">Friday\n1-2am</string>
     <string name="time_resource">12-2am</string>
 </resources>

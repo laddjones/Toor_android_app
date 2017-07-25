@@ -75,7 +75,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.vrtLine.setBackgroundColor(Color.CYAN);
             holder.txtDate.setText(R.string.friday_resource);
             holder.txtTime.setText(R.string.time_resource);
-            holder.itemView.setElevation(20);
+            //holder.itemView.setElevation(20);
             holder.hrLine.setBackgroundColor(Color.WHITE);
 
         } else if(position%7==0) {
@@ -142,11 +142,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.txtTime.setText(R.string.time_resource);
 
         }
-        holder.txtetDescription.setElevation(10);
+        holder.txtDate.setText(R.string.friday_resource);
+
         holder.hrLine.setBackgroundColor(Color.WHITE);
         holder.vrtLine.setBackgroundColor(Color.WHITE);
         holder.vrtLine.setBackgroundColor(Color.LTGRAY);
-        holder.txtNumPeople.setTextColor(Color.WHITE);
     }
 
     @Override
