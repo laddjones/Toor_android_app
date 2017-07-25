@@ -18,7 +18,7 @@ import org.w3c.dom.Text;
 
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
-
+    //up to snuff
     private List<String> values;
 
     public CustomAdapter(List<String> myDataSet) {

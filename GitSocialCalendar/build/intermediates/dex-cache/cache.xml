@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/laddjones/Desktop/CompanyCode/GitSocialCalendar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="abd0b41c865337385a97626d217fd3b97feefe9a">
-        <dex dex="/Users/laddjones/Desktop/CompanyCode/GitSocialCalendar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7c78edd5d26d3ad9de6df9ab2513dfef0b72ebe4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/laddjones/Desktop/CompanyCode/GitSocialCalendar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/laddjones/Desktop/toor_git/GitSocialCalendar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/laddjones/Desktop/CompanyCode/GitSocialCalendar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_55393ebcfd052810afb113755cd6314cb5671981/classes.dex" />
+        <dex dex="/Users/laddjones/Desktop/toor_git/GitSocialCalendar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_81761af01b7393032740f033d1baf524cff3339f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/laddjones/Desktop/toor_git/GitSocialCalendar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4436467f07e23d1b8fb1f2341b5e89d6316ec02e">
+        <dex dex="/Users/laddjones/Desktop/toor_git/GitSocialCalendar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_134e9884a233a8e71ffe6c73f651ea6db606aad8/classes.dex" />
     </item>
 
 </items>

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView myRecyclerView;
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager myLayoutManager;
-
+    //works here too
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); // here super is being used to called the parent method
