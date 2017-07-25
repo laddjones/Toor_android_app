@@ -91,7 +91,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.txtPersonName.setText("Luke Jones");
             holder.txtNumPeople.setText("1");
             holder.picOfP.setImageResource(R.mipmap.luke_face);
-            holder.txtetDescription.setText("walk the # " + name +" with bla bla bla ");
+            holder.txtetDescription.setText("walk the # " + name +" with bla bla bla sdfgsdfgsdf sdf sdg s gsdf ");
             holder.vrtLine.setBackgroundColor(Color.RED);
             holder.txtDate.setText(R.string.friday_resource);
             holder.txtTime.setText(R.string.time_resource);
@@ -100,7 +100,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.txtPersonName.setText("Dad");
             holder.txtNumPeople.setText("3");
             holder.picOfP.setImageResource(R.mipmap.dad_face);
-            holder.txtetDescription.setText("Talking # " + name +" with dad over the new car aka lambo");
+            holder.txtetDescription.setText("Talking # " + name +" with dad over the new car aka lakjsdf ");
             holder.vrtLine.setBackgroundColor(Color.DKGRAY);
             holder.txtDate.setText(R.string.friday_resource);
             holder.txtTime.setText(R.string.time_resource);
@@ -144,7 +144,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         }
         holder.txtDate.setText(R.string.friday_resource);
 
-        holder.hrLine.setBackgroundColor(Color.WHITE);
+        holder.hrLine.setBackgroundColor(Color.RED);
         holder.vrtLine.setBackgroundColor(Color.WHITE);
         holder.vrtLine.setBackgroundColor(Color.LTGRAY);
     }
