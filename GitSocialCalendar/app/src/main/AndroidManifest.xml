@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".CreateETActivity"></activity>
+        <activity android:name=".CreateCalActivity"></activity>
+        <activity android:name=".CreateToDoActivity"></activity>
+
     </application>
 
 </manifest>

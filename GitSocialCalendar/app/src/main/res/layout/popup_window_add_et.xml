@@ -7,6 +7,7 @@
 
 
     <TextView
+        android:id="@+id/background_fade"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ecffffff" />
@@ -17,9 +18,9 @@
         android:padding="5dp"
         android:textColor="#ffffff"
         android:background="#6ec6ff"
-        app:layout_constraintRight_toLeftOf="@+id/add_calendar"
-        app:layout_constraintBottom_toBottomOf="@+id/add_calendar"
-        app:layout_constraintTop_toTopOf="@+id/add_calendar"/>
+        app:layout_constraintRight_toLeftOf="@+id/add_to_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/add_to_calendar"
+        app:layout_constraintTop_toTopOf="@+id/add_to_calendar"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_calendar"
+        android:id="@+id/add_to_calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/my_recycler_view"
@@ -53,7 +54,7 @@
         app:elevation="5dp"
         app:useCompatPadding="true"
         app:srcCompat="@drawable/ic_add_black_24dp"
-        app:layout_constraintBottom_toTopOf="@id/add_calendar"
+        app:layout_constraintBottom_toTopOf="@id/add_to_calendar"
         app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

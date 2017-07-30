@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.view.MotionEvent;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 onButtonShowPopupWindowClick(v);
             }
         });
+
     }
 
     public void onButtonShowPopupWindowClick(View view) {
@@ -92,5 +95,25 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        FloatingActionButton calButton = (FloatingActionButton) popupView.findViewById(R.id.add_to_calendar);
+        FloatingActionButton todoButton = (FloatingActionButton) popupView.findViewById(R.id.add_to_list);
+
+        calButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CreateCalActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+
+        todoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CreateToDoActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+
     }
 }
