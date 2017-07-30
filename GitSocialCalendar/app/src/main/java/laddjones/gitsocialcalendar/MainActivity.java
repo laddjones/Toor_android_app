@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.View;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.widget.PopupWindow;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.view.GestureDetectorCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager myLayoutManager;
     private FloatingActionButton addET;
+    private GestureDetectorCompat gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //swipe to change page
+        gestureDetector = new GestureDetectorCompat(this, new LearnGesture());
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+
+    }
+
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+            if (event2.getX() > event1.getX()) {
+                Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else if (event2.getX() < event1.getX()) {
+                Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            return true;
+        }
     }
 
     public void onButtonShowPopupWindowClick(View view) {
