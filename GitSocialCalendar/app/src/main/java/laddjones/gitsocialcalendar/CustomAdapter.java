@@ -29,8 +29,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         public TextView txtPersonName;
         public TextView txtNumPeople;
         public TextView txtetDescription;
-        public TextView txtDate;
-        public TextView txtTime;
+        public TextView txtDateAndTime;
         public ImageView picOfP;
         public View vrtLine;
         public View hrLine;
@@ -43,8 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             txtPersonName = (TextView) v.findViewById(R.id.name);
             txtNumPeople = (TextView) v.findViewById(R.id.numPeople);
             txtetDescription = (TextView) v.findViewById(R.id.etDescription);
-            txtDate = (TextView) v.findViewById(R.id.dateTop);
-            txtTime = (TextView) v.findViewById(R.id.timeBelow);
+            txtDateAndTime = (TextView) v.findViewById(R.id.dateAndTime);
             vrtLine = v.findViewById(R.id.verticalLine);
             hrLine = v.findViewById(R.id.horizontalLine);
         }
@@ -73,8 +71,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.bill_gates);
             holder.txtetDescription.setText("dinner # " + name +" with Elon to talk about telsa");
             holder.vrtLine.setBackgroundColor(Color.CYAN);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
             //holder.itemView.setElevation(20);
             holder.hrLine.setBackgroundColor(Color.WHITE);
 
@@ -84,8 +81,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.code_group);
             holder.txtetDescription.setText("group discuption # " + name +" with Elon");
             holder.vrtLine.setBackgroundColor(Color.YELLOW);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else if(position%6==0) {
             holder.txtPersonName.setText("Luke Jones");
@@ -93,8 +89,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.luke_face);
             holder.txtetDescription.setText("walk the # " + name +" with bla bla bla sdfgsdfgsdf sdf sdg s gsdf ");
             holder.vrtLine.setBackgroundColor(Color.RED);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else if(position%5==0) {
             holder.txtPersonName.setText("Dad");
@@ -102,8 +97,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.dad_face);
             holder.txtetDescription.setText("Talking # " + name +" with dad over the new car aka lakjsdf ");
             holder.vrtLine.setBackgroundColor(Color.DKGRAY);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else if(position%4==0) {
             holder.txtPersonName.setText("Computer Group");
@@ -111,8 +105,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.computer_group);
             holder.txtetDescription.setText("Meeting # " + name +" with Elon");
             holder.vrtLine.setBackgroundColor(Color.RED);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else if(position%3==0) {
             holder.txtPersonName.setText("Elon Musk");
@@ -120,8 +113,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.elon_musk);
             holder.txtetDescription.setText("going to mars # " + name +" with Elon");
             holder.vrtLine.setBackgroundColor(Color.GREEN);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else if(position%2==0) {
             holder.txtPersonName.setText("Richard Branson");
@@ -129,8 +121,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.richard_branson);
             holder.txtetDescription.setText("fun stuff # " + name +" with Elon");
             holder.vrtLine.setBackgroundColor(Color.MAGENTA);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         } else {
             holder.txtPersonName.setText("Ladd Jones");
@@ -138,11 +129,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             holder.picOfP.setImageResource(R.mipmap.ladd_face);
             holder.txtetDescription.setText("here we go # " + name +" with Elon");
             holder.vrtLine.setBackgroundColor(Color.RED);
-            holder.txtDate.setText(R.string.friday_resource);
-            holder.txtTime.setText(R.string.time_resource);
+            holder.txtDateAndTime.setText(R.string.friday_resource);
 
         }
-        holder.txtDate.setText(R.string.friday_resource);
+        holder.txtDateAndTime.setText(R.string.friday_resource);
 
         holder.hrLine.setBackgroundColor(Color.RED);
         holder.vrtLine.setBackgroundColor(Color.WHITE);
