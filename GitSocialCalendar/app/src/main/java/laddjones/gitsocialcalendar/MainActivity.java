@@ -24,6 +24,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.view.GestureDetectorCompat;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager myLayoutManager;
     private FloatingActionButton addET;
-    private GestureDetectorCompat gestureDetector;
+    private GestureDetector gestureDetector;
+    View.OnTouchListener gestureListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,37 +72,58 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //swipe to change page
-        gestureDetector = new GestureDetectorCompat(this, new LearnGesture());
-
+        //swipe to change page ------
+        gestureDetector = new GestureDetector(this, new LearnGesture());
+        gestureListener = new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        };
+        myRecyclerView.setOnTouchListener(gestureListener);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        this.gestureDetector.onTouchEvent(event);
-        return super.onTouchEvent(event);
 
+    public void onLeftSwipe() {
+        Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
+        startActivity(intent);
+        finish();
     }
-
+    public void onRightSwipe() {
+        Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+        startActivity(intent);
+        finish();
+    }
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        private static final int SWIPE_MIN_DISTANCE = 50;
+        private static final int SWIPE_MAX_OFF_PATH = 200;
+        private static final int SWIPE_THRESHOLD_VELOCITY = 200;
+
         @Override
-        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
-            if (event2.getX() > event1.getX()) {
-                Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
-                startActivity(intent);
-                finish();
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                               float velocityY) {
+            try {
+                float diffAbs = Math.abs(e1.getY() - e2.getY());
+                float diff = e1.getX() - e2.getX();
+
+                if (diffAbs > SWIPE_MAX_OFF_PATH)
+                    return false;
+
+                // Left swipe
+                if (diff > SWIPE_MIN_DISTANCE
+                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+                    MainActivity.this.onLeftSwipe();
+                }
+                // Right swipe
+                else if (-diff > SWIPE_MIN_DISTANCE
+                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+                    MainActivity.this.onRightSwipe();
+                }
+            } catch (Exception e) {
+                Log.e("Home", "Error on gestures");
             }
-            else if (event2.getX() < event1.getX()) {
-                Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
-                startActivity(intent);
-                finish();
-            }
-            return true;
+            return false;
         }
+
     }
 
     public void onButtonShowPopupWindowClick(View view) {

@@ -8,48 +8,44 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by laddjones on 7/30/17.
+ * Created by laddjones on 8/1/17.
  */
 
-public class MessagesActivity extends AppCompatActivity {
+
+public class ToDoListActivity extends AppCompatActivity {
 
     private GestureDetector gestureDetector;
     View.OnTouchListener gestureListener;
-    private ConstraintLayout myMessagesView;
+    private ConstraintLayout myToDoListView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messages);
+        setContentView(R.layout.activity_todo_list);
 
-        myMessagesView = (ConstraintLayout) findViewById(R.id.messages_a);
+        myToDoListView = (ConstraintLayout) findViewById(R.id.todo_a);
 
-        Toast.makeText(getApplication().getApplicationContext(), "Messages Page", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getApplication().getApplicationContext(), "Arrived at To-Do list", Toast.LENGTH_LONG).show();
 
         //swipe to change page ------
-        gestureDetector = new GestureDetector(this, new MessagesActivity.LearnGestureMessage());
+        gestureDetector = new GestureDetector(this, new ToDoListActivity.LearnGestureCal());
         gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 return gestureDetector.onTouchEvent(event);
             }
         };
-        myMessagesView.setOnTouchListener(gestureListener);
+        myToDoListView.setOnTouchListener(gestureListener);
     }
 
-
-
-    public void onLeftSwipe() {
-        Intent intent = new Intent(MessagesActivity.this, MainActivity.class);
+    public void onRightSwipe() {
+        Intent intent = new Intent(ToDoListActivity.this, CalendarDayViewActivity.class);
         startActivity(intent);
         finish();
     }
-
-    class LearnGestureMessage extends GestureDetector.SimpleOnGestureListener {
+    class LearnGestureCal extends GestureDetector.SimpleOnGestureListener {
         private static final int SWIPE_MIN_DISTANCE = 50;
         private static final int SWIPE_MAX_OFF_PATH = 200;
         private static final int SWIPE_THRESHOLD_VELOCITY = 200;
@@ -64,10 +60,10 @@ public class MessagesActivity extends AppCompatActivity {
                 if (diffAbs > SWIPE_MAX_OFF_PATH)
                     return false;
 
-                // Left swipe
-                if (diff > SWIPE_MIN_DISTANCE
+                // Right swipe
+                if (-diff > SWIPE_MIN_DISTANCE
                         && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
-                    MessagesActivity.this.onLeftSwipe();
+                    ToDoListActivity.this.onRightSwipe();
                 }
             } catch (Exception e) {
                 Log.e("Home", "Error on gestures");
@@ -80,6 +76,5 @@ public class MessagesActivity extends AppCompatActivity {
         }
 
     }
-
 
 }

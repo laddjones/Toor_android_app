@@ -21,6 +21,7 @@
         <activity android:name=".CreateToDoActivity"></activity>
         <activity android:name=".CalendarDayViewActivity"></activity>
         <activity android:name=".MessagesActivity"></activity>
+        <activity android:name=".ToDoListActivity"></activity>
 
     </application>
 
