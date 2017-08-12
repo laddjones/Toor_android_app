@@ -1,4 +1,4 @@
-package laddjones.gitsocialcalendar;
+package laddjones.gitsocialcalendar.message;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,10 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import laddjones.gitsocialcalendar.R;
+import laddjones.gitsocialcalendar.main.MainActivity;
 
 /**
  * Created by laddjones on 7/30/17.
@@ -46,6 +48,7 @@ public class MessagesActivity extends AppCompatActivity {
     public void onLeftSwipe() {
         Intent intent = new Intent(MessagesActivity.this, MainActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.right_slide1, R.anim.right_slide2);
         finish();
     }
 

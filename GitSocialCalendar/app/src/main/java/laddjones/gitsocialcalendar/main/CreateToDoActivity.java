@@ -1,17 +1,18 @@
-package laddjones.gitsocialcalendar;
+package laddjones.gitsocialcalendar.main;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import laddjones.gitsocialcalendar.R;
 
 /**
  * Created by laddjones on 7/30/17.
  */
 
-public class CreateCalActivity extends AppCompatActivity {
+public class CreateToDoActivity extends AppCompatActivity {
 
     private TextInputEditText etDescriptionCal;
     private Button addToCal;
@@ -19,10 +20,10 @@ public class CreateCalActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_cal);
+        setContentView(R.layout.activity_create_todo);
 
-        etDescriptionCal = (TextInputEditText) findViewById(R.id.edit_text_et_description_cal);
-        addToCal = (Button) findViewById(R.id.add_et_button_cal);
+        etDescriptionCal = (TextInputEditText) findViewById(R.id.edit_text_et_description_todo);
+        addToCal = (Button) findViewById(R.id.add_et_button_todo);
 
         addToCal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,5 +39,4 @@ public class CreateCalActivity extends AppCompatActivity {
     public void addET(String etDescriptionCal) {
 
     }
-
 }

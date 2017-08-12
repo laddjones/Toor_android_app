@@ -1,4 +1,4 @@
-package laddjones.gitsocialcalendar;
+package laddjones.gitsocialcalendar.main;
 
 /**
  * Created by laddjones on 7/12/17.
@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,18 +15,17 @@ import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.View;
 import android.view.LayoutInflater;
-import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.view.MotionEvent;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.support.v4.view.GestureDetectorCompat;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import laddjones.gitsocialcalendar.message.MessagesActivity;
+import laddjones.gitsocialcalendar.R;
+import laddjones.gitsocialcalendar.calendar.CalendarDayViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -86,11 +84,13 @@ public class MainActivity extends AppCompatActivity {
     public void onLeftSwipe() {
         Intent intent = new Intent(MainActivity.this, CalendarDayViewActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.right_slide1, R.anim.right_slide2);
         finish();
     }
     public void onRightSwipe() {
         Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.left_slide1, R.anim.left_slide2);
         finish();
     }
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
